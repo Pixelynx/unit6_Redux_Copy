@@ -10,7 +10,7 @@ h1 {
 }
 
 .movie_body {
-  height: 100%;
+
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -34,9 +34,4 @@ h1 {
 
 .test {
   color: white;
-}
-
-.remaining_space {
-  background-color: pink;
-  height: calc(100% - 150px);
 }

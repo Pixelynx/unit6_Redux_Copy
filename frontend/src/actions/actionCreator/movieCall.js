@@ -6,7 +6,7 @@ export const fetchMovies = () => (dispatch) => {
 
   return util.fetchAllMovies()
               .then(res => {
-                dispatch(displayPosts(res.data.movies))
+                dispatch(displayPosts(res.data))
               })
               .catch(err => console.log(err))
 
