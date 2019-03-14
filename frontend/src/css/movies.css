@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+h1 {
+  color: yellow;
+  margin-top: 75px;
+}
+
+.movie_body {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 0;
+  background-color: black;
+}
+
+.movie_title {
+  color: yellow;
+}
+
+.movie_img {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.search_input {
+  background-color: white;
+  color: red;
+}
+
+.test {
+  color: white;
+}
+
+.remaining_space {
+  background-color: pink;
+  height: calc(100% - 150px);
+}

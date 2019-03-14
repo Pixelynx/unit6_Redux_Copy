@@ -1,0 +1,27 @@
+{
+  "name": "unit6test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pixelynx/unit6test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pixelynx/unit6test/issues"
+  },
+  "homepage": "https://github.com/Pixelynx/unit6test#readme",
+  "dependencies": {
+    "browser-router": "^0.2.0",
+    "react": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  }
+}
