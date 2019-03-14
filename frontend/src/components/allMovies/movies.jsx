@@ -7,10 +7,12 @@ import '../../css/movies.css';
 
 class Movies extends Component {
 
+  componentDidMount = () => {
+    this.props.fetchMovies()
+  }
 
 
   render() {
-
     return(
       <>
       <div className='movie_body'>
@@ -26,8 +28,6 @@ class Movies extends Component {
             ></input>
           <input type='submit' value='Search'></input>
         </form>
-
-
 
         <div className='remaining_space'>gbdfd</div>
       </div>
