@@ -27,9 +27,11 @@ class Movies extends Component {
   }
 
   displayMovies = () => {
+    debugger
     const { movies } = this.props
-    movies.map(movie => {
+    const { formSubmitted, search_input } = this.state
 
+    let mapMovies = movies.map(movie => {
       let poster = {
             backgroundImage: 'url(' + movie.img_url + ')',
             backgroundSize: 'contain',
@@ -38,18 +40,35 @@ class Movies extends Component {
             height: '100px'
         }
 
-      return(
-        <div key={movie.id} className="movie_body">
-          <p className="movie_title">{movie.title}</p>
-          <div className="posterImg" style={poster}></div>
-        </div>
-      )
+        if(formSubmitted && search_input) {
+          movies.filter(movie => {
+            return(
+              <div key={movie.id} className="movie_body">
+                <p className="movie_title">{movie.title}</p>
+                <div className="posterImg" style={poster}></div>
+              </div>
+            )
+          })
+
+        } else {
+
+          return(
+            <div key={movie.id} className="movie_body">
+              <p className="movie_title">{movie.title}</p>
+              <div className="posterImg" style={poster}></div>
+            </div>
+          )
+        }
     })
+
+    return mapMovies
+
   }
 
   render() {
     console.log(this.state)
     const { formSubmitted, search_input } = this.state
+    const displayMovies = this.displayMovies()
 
 
     return(
@@ -70,12 +89,7 @@ class Movies extends Component {
 
           <input type='submit' value='Search'></input>
         </form>
-
-        <SearchMovies
-          movies={this.props.movies}
-          formSubmitted={formSubmitted}
-          search_input={search_input}
-          displayMovies={this.displayMovies}/>
+        {displayMovies}
 
       </div>
 
@@ -87,3 +101,13 @@ class Movies extends Component {
 
 
 export default Movies;
+
+
+
+
+
+// <SearchMovies
+//   movies={this.props.movies}
+//   formSubmitted={formSubmitted}
+//   search_input={search_input}
+//   displayMovies={this.displayMovies}/>
