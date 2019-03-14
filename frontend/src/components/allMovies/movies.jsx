@@ -35,7 +35,6 @@ class Movies extends Component {
   }
 
   render() {
-    console.log(this.props.movies, "the movies")
     return(
       <>
       <div className='movie_body'>
@@ -43,20 +42,20 @@ class Movies extends Component {
         <h1>All Movies</h1>
 
         <form className='search_movies'>
+          
           <input
             type='text'
             name='searchInput'
             className='search_input'
             placeholder='Search Movies'
             ></input>
+
           <input type='submit' value='Search'></input>
         </form>
-        
+
         <DisplayMovies
           movies={this.props.movies}
           />
-
-
       </div>
 
       <Route path='movies/byGenre' />
