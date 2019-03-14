@@ -3,6 +3,7 @@ import { fetchAllMovies } from '../../actions/movieActions.js';
 import { connect } from 'react-redux'
 
 export const mapStateToProps = (state) => {
+  console.log('State:', state)
   return ({
     movies: state.movieReducer
   })
