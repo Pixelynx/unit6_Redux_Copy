@@ -27,21 +27,21 @@ class Movies extends Component {
   }
 
   displayMovies = () => {
-    debugger
-    const { movies } = this.props
+    const movies = Object.values(this.props.movies)
     const { formSubmitted, search_input } = this.state
 
-    let mapMovies = movies.map(movie => {
-      let poster = {
-            backgroundImage: 'url(' + movie.img_url + ')',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            width: '100px',
-            height: '100px'
-        }
-
         if(formSubmitted && search_input) {
-          movies.filter(movie => {
+          let searchedMovie = movies.filter(movie => {
+            return movie.title.toLowerCase() === search_input.toLowerCase()
+          })
+          searchedMovie.map(movie => {
+            let poster = {
+                  backgroundImage: 'url(' + movie.img_url + ')',
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
+                  width: '100px',
+                  height: '100px'
+              }
             return(
               <div key={movie.id} className="movie_body">
                 <p className="movie_title">{movie.title}</p>
@@ -49,20 +49,24 @@ class Movies extends Component {
               </div>
             )
           })
-
-        } else {
-
+      } else {
+        let filterMovies = movies.filter(movie => {
+          let poster = {
+                backgroundImage: 'url(' + movie.img_url + ')',
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                width: '100px',
+                height: '100px'
+            }
           return(
             <div key={movie.id} className="movie_body">
               <p className="movie_title">{movie.title}</p>
               <div className="posterImg" style={poster}></div>
             </div>
           )
+          })
+          return filterMovies
         }
-    })
-
-    return mapMovies
-
   }
 
   render() {
